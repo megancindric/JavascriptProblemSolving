@@ -104,3 +104,39 @@ function compressStringRoutine() {
     var compressedString = compressInputString(input);
     displayCompressString(compressedString);
 }
+
+//Palindrome (let's use reverse string function!)
+//let output = reverseString(stringToReverse)
+
+//    let lowerString = convertToLower(stringToCap);
+
+
+function getPalindrome() {
+    let response = prompt("Let's do a palindrome check!  Enter your word:");
+    return response;
+}
+
+function compareStrings(string1, string2)
+{
+    if (string1 == string2)
+    {
+        var result = "This is a palindrome!"
+    }
+    else {
+        var result = "This is NOT a palindrome!"
+    }
+    return result;
+}
+
+function displayPalindromeCheck(result){
+    document.getElementById('palindrome').innerHTML = result;    
+    }
+
+function palindromeRoutine() {
+    var input = getPalindrome();
+    var lowerInput = convertToLower(input);
+    var reversedInput = reverseString(lowerInput);
+    var result = compareStrings(lowerInput, reversedInput);
+    displayPalindromeCheck(result);
+}
+
