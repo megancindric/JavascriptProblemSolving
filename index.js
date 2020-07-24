@@ -68,5 +68,39 @@ function capitalizeFirstLetterRoutine() {
     let splitString = splitIntoWords(lowerString);
     let capArray = capitalizeEachFirstLetter(splitString);
     let resultString = arrayToString(capArray)
-    let result = displayCapCase(resultString);
+    displayCapCase(resultString);
+}
+
+//Compressing a string of characters
+
+function getCompressionInput() {
+    let response = prompt("Enter a string to compress:")
+    return response;
+}
+
+function compressInputString(string) {
+    var result = "";
+    var letterCount = 1;
+    for (var i = 0; i < string.length; i++)
+    {
+        if(string[i] != string[i+1]) {
+            result += letterCount + string[i];
+            letterCount = 1;
+        }
+        else {
+            letterCount++;
+        }
+    }
+
+    return result;
+}
+
+function displayCompressString(result){
+    document.getElementById('compStr').innerHTML = result;    
+    }
+
+function compressStringRoutine() {
+    var input = getCompressionInput();
+    var compressedString = compressInputString(input);
+    displayCompressString(compressedString);
 }
